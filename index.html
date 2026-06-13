@@ -10,18 +10,43 @@
   <header class="hero">
     <nav>
       <strong>Volunteer Scheduler</strong>
+      <a href="#benefits">Benefits</a>
       <a href="#register">Register</a>
-      <a href="#admin">Admin Dashboard</a>
+      <a href="#lookup">My Schedule</a>
+      <a href="#admin">Admin</a>
     </nav>
-    <section>
-      <p class="eyebrow">4-month weekend training programme</p>
-      <h1>Collect availability and generate an optimized volunteer training schedule.</h1>
-      <p>Demo for 20 volunteers, predefined weekend sessions, capacity limits, and exactly 8 assigned sessions per volunteer.</p>
-      <a class="button" href="#register">Try the demo</a>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">4-month weekend training programme</p>
+        <h1>Schedule volunteer training without spreadsheets, duplicate forms, or capacity mistakes.</h1>
+        <p>Collect availability, prevent duplicate registrations, generate fair training assignments, identify conflicts, and publish final schedules from one simple dashboard.</p>
+        <div class="actions">
+          <a class="button" href="#register">Register as volunteer</a>
+          <a class="ghost" href="#admin">View admin demo</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <span class="pill light">Client-ready prototype</span>
+        <h2>Exactly 8 sessions per volunteer</h2>
+        <p>Built around the real programme rule: volunteers are only assigned to dates they selected, and sessions cannot exceed capacity.</p>
+        <ul>
+          <li>Weekend date selection</li>
+          <li>Capacity-aware scheduler</li>
+          <li>Conflict explanations</li>
+          <li>CSV export</li>
+        </ul>
+      </aside>
     </section>
   </header>
 
   <main>
+    <section id="benefits" class="benefits">
+      <article class="card benefit"><span>01</span><h3>Less admin work</h3><p>Replace manual spreadsheets with one availability form and a single schedule-generation action.</p></article>
+      <article class="card benefit"><span>02</span><h3>Fair assignments</h3><p>The demo schedules less-flexible volunteers first and balances demand across available sessions.</p></article>
+      <article class="card benefit"><span>03</span><h3>Clear decisions</h3><p>Admins see who is complete, who has conflicts, and what action can fix each issue.</p></article>
+      <article class="card benefit"><span>04</span><h3>Ready to extend</h3><p>The prototype is structured for a backend, authentication, email notifications, and stronger optimization.</p></article>
+    </section>
+
     <section class="grid two">
       <article class="card stat"><span id="volunteerCount">0</span><p>Registered volunteers</p></article>
       <article class="card stat"><span id="sessionCount">0</span><p>Training sessions</p></article>
@@ -32,6 +57,7 @@
         <div>
           <p class="eyebrow">Volunteer form</p>
           <h2>Register availability</h2>
+          <p class="muted">Volunteers submit their details once. Duplicate emails are blocked.</p>
         </div>
         <button id="loadSample" class="secondary">Load sample volunteers</button>
       </div>
@@ -50,30 +76,65 @@
       </form>
     </section>
 
+    <section id="lookup" class="card lookup-card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Volunteer schedule lookup</p>
+          <h2>Check assigned training dates</h2>
+          <p class="muted">Demo lookup by email. In production this would use secure email verification or login.</p>
+        </div>
+        <span id="publishStatus" class="pill">Draft schedule</span>
+      </div>
+      <div class="lookup-row">
+        <input id="lookupEmail" type="email" placeholder="Enter volunteer email" />
+        <button id="lookupBtn" class="button">Find my schedule</button>
+      </div>
+      <div id="lookupResult" class="lookup-result"></div>
+    </section>
+
     <section id="admin" class="card">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Admin dashboard</p>
+          <p class="eyebrow">Admin login mockup</p>
           <h2>Schedule management</h2>
+          <p class="muted">Mock credentials are shown for demo purposes only. No real authentication is performed in this static prototype.</p>
         </div>
-        <div class="actions">
-          <button id="generate" class="button">Generate schedule</button>
-          <button id="exportCsv" class="secondary">Export CSV</button>
-          <button id="reset" class="danger">Reset demo</button>
+        <div class="login-box">
+          <label>Admin email<input id="adminEmail" value="admin@example.com" /></label>
+          <label>Password<input id="adminPassword" type="password" value="demo123" /></label>
+          <button id="adminLogin" class="secondary">Unlock dashboard</button>
+          <p id="loginMessage" class="message small">Dashboard is locked until mock login.</p>
         </div>
       </div>
 
-      <div class="grid three" id="adminStats"></div>
+      <div id="adminPanel" class="locked">
+        <div class="section-heading compact">
+          <div>
+            <h3>Admin controls</h3>
+            <p class="muted">Generate, review, publish, export, or reset the demo schedule.</p>
+          </div>
+          <div class="actions">
+            <button id="generate" class="button">Generate schedule</button>
+            <button id="publish" class="success">Publish schedule</button>
+            <button id="exportCsv" class="secondary">Export CSV</button>
+            <button id="reset" class="danger">Reset demo</button>
+          </div>
+        </div>
 
-      <h3>Training sessions and capacity</h3>
-      <div class="table-wrap"><table id="sessionsTable"></table></div>
+        <div class="grid three" id="adminStats"></div>
 
-      <h3>Registered volunteers</h3>
-      <div class="table-wrap"><table id="volunteersTable"></table></div>
+        <h3>Training sessions and capacity</h3>
+        <div class="table-wrap"><table id="sessionsTable"></table></div>
 
-      <h3>Generated schedule</h3>
-      <div id="conflicts" class="conflicts"></div>
-      <div class="table-wrap"><table id="scheduleTable"></table></div>
+        <h3>Registered volunteers</h3>
+        <div class="table-wrap"><table id="volunteersTable"></table></div>
+
+        <h3>Conflict report</h3>
+        <div id="conflicts" class="conflicts"></div>
+
+        <h3>Generated schedule</h3>
+        <div class="table-wrap"><table id="scheduleTable"></table></div>
+      </div>
     </section>
   </main>
 

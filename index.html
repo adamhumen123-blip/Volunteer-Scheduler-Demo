@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volunteer Scheduler Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <strong>Volunteer Scheduler</strong>
+      <a href="#register">Register</a>
+      <a href="#admin">Admin Dashboard</a>
+    </nav>
+    <section>
+      <p class="eyebrow">4-month weekend training programme</p>
+      <h1>Collect availability and generate an optimized volunteer training schedule.</h1>
+      <p>Demo for 20 volunteers, predefined weekend sessions, capacity limits, and exactly 8 assigned sessions per volunteer.</p>
+      <a class="button" href="#register">Try the demo</a>
+    </section>
+  </header>
+
+  <main>
+    <section class="grid two">
+      <article class="card stat"><span id="volunteerCount">0</span><p>Registered volunteers</p></article>
+      <article class="card stat"><span id="sessionCount">0</span><p>Training sessions</p></article>
+    </section>
+
+    <section id="register" class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Volunteer form</p>
+          <h2>Register availability</h2>
+        </div>
+        <button id="loadSample" class="secondary">Load sample volunteers</button>
+      </div>
+
+      <form id="volunteerForm">
+        <div class="grid three">
+          <label>Full name<input required id="name" placeholder="Aisha Khan" /></label>
+          <label>Email<input required id="email" type="email" placeholder="aisha@example.com" /></label>
+          <label>Phone<input required id="phone" placeholder="0300 0000000" /></label>
+        </div>
+        <h3>Select available dates</h3>
+        <p class="muted">Choose at least 8 dates. Selecting more dates improves the chance of a successful schedule.</p>
+        <div id="availabilityList" class="date-list"></div>
+        <button class="button" type="submit">Submit registration</button>
+        <p id="formMessage" class="message"></p>
+      </form>
+    </section>
+
+    <section id="admin" class="card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Admin dashboard</p>
+          <h2>Schedule management</h2>
+        </div>
+        <div class="actions">
+          <button id="generate" class="button">Generate schedule</button>
+          <button id="exportCsv" class="secondary">Export CSV</button>
+          <button id="reset" class="danger">Reset demo</button>
+        </div>
+      </div>
+
+      <div class="grid three" id="adminStats"></div>
+
+      <h3>Training sessions and capacity</h3>
+      <div class="table-wrap"><table id="sessionsTable"></table></div>
+
+      <h3>Registered volunteers</h3>
+      <div class="table-wrap"><table id="volunteersTable"></table></div>
+
+      <h3>Generated schedule</h3>
+      <div id="conflicts" class="conflicts"></div>
+      <div class="table-wrap"><table id="scheduleTable"></table></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Static front-end demo. Data is stored in browser localStorage.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

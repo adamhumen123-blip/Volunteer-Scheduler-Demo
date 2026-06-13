@@ -1,0 +1,25 @@
+<svg width="1000" height="620" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="620" rx="24" fill="#f6f7fb"/>
+  <rect x="40" y="40" width="920" height="190" rx="24" fill="#2457ff"/>
+  <text x="80" y="95" font-family="Arial" font-size="18" fill="#dbe4ff" font-weight="700">VOLUNTEER SCHEDULER</text>
+  <text x="80" y="145" font-family="Arial" font-size="38" fill="white" font-weight="800">Volunteer training scheduler</text>
+  <text x="80" y="190" font-family="Arial" font-size="20" fill="#eef2ff">Register availability, generate schedules, resolve conflicts, and publish final dates.</text>
+  <rect x="40" y="260" width="280" height="130" rx="18" fill="white" stroke="#e6e8ef"/>
+  <text x="70" y="315" font-family="Arial" font-size="34" fill="#2457ff" font-weight="800">12</text>
+  <text x="70" y="350" font-family="Arial" font-size="19" fill="#172033" font-weight="700">Registered volunteers</text>
+  <rect x="360" y="260" width="280" height="130" rx="18" fill="white" stroke="#e6e8ef"/>
+  <text x="390" y="315" font-family="Arial" font-size="34" fill="#2457ff" font-weight="800">16</text>
+  <text x="390" y="350" font-family="Arial" font-size="19" fill="#172033" font-weight="700">Weekend sessions</text>
+  <rect x="680" y="260" width="280" height="130" rx="18" fill="white" stroke="#e6e8ef"/>
+  <text x="710" y="315" font-family="Arial" font-size="34" fill="#087443" font-weight="800">Ready</text>
+  <text x="710" y="350" font-family="Arial" font-size="19" fill="#172033" font-weight="700">Publish schedule</text>
+  <rect x="40" y="425" width="920" height="145" rx="18" fill="white" stroke="#e6e8ef"/>
+  <text x="70" y="475" font-family="Arial" font-size="23" fill="#172033" font-weight="800">Admin Dashboard</text>
+  <rect x="70" y="500" width="170" height="40" rx="20" fill="#2457ff"/>
+  <text x="102" y="526" font-family="Arial" font-size="15" fill="white" font-weight="700">Generate schedule</text>
+  <rect x="260" y="500" width="160" height="40" rx="20" fill="#ecfdf3"/>
+  <text x="292" y="526" font-family="Arial" font-size="15" fill="#087443" font-weight="700">Publish schedule</text>
+  <rect x="440" y="500" width="125" height="40" rx="20" fill="#edf2ff"/>
+  <text x="470" y="526" font-family="Arial" font-size="15" fill="#2457ff" font-weight="700">Export CSV</text>
+  <text x="600" y="526" font-family="Arial" font-size="17" fill="#697386">Conflict report includes suggested fixes.</text>
+</svg>
